@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">CRUDdoZero</string>
+
+
+     <!-- Subscriber Fragment-->
+    <string name="subscriber_name_hint">Subscriber\'s name</string>
+    <string name="subscriber_email_hint">E-mail</string>
+    <string name="subscriber_button">ADD</string>
+    <string name="subscriber_title">Subscriber</string>
+    <string name="subscriber_inserted_successfully">Subscriber was successfully inserted</string>
+    <string name="subscriber_error_to_insert">There was an error when inserting Subscriber</string>
+
+    <!--Subscriber List Fragment-->
+    <string name="subscriber_list_title">Subscribers List</string>
+    <string name="subscriber_button_update">Update</string>
+    <string name="subscriber_updated_succesfully">Subscriber was succesfully updated</string>
+    <string name="subscriber_button_delete">Delete</string>
+    <string name="subscriber_deleted_successfully">Subscriber was succesfully deleted</string>
+    <string name="subscriber_error_to_delete">There was an error in delete subscriber</string>
+    <string name="subscriber_error_to_update">There was an error to update subscriber</string>
+</resources>
