@@ -2,6 +2,7 @@ package com.queapps.cruddozero.data.db.dao
 
 import androidx.room.*
 import com.queapps.cruddozero.data.db.entity.SubscriberEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface SubscriberDao {
@@ -18,6 +19,6 @@ interface SubscriberDao {
     suspend fun deleteAll()
 
     @Query("SELECT * FROM subscriber_tb")
-    suspend fun getAll(): List<SubscriberEntity>
+    fun getAll(): Flow<List<SubscriberEntity>>
 //    fun getAll(): LiveData<List<SubscriberEntity>>
 }

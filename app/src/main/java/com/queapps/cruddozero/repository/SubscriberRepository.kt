@@ -1,6 +1,7 @@
 package com.queapps.cruddozero.repository
 
 import com.queapps.cruddozero.data.db.entity.SubscriberEntity
+import kotlinx.coroutines.flow.Flow
 
 interface SubscriberRepository {
 
@@ -12,6 +13,6 @@ interface SubscriberRepository {
 
     suspend fun deleteAllSubscribers()
 
-    suspend fun getAllSubscribers(): List<SubscriberEntity>
+    suspend fun getAllSubscribers(): Flow<List<SubscriberEntity>>
 //    fun getAllSubscribers(): LiveData<List<SubscriberEntity>>
 }

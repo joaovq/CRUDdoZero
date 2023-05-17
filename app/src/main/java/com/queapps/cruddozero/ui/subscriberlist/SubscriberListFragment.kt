@@ -23,8 +23,8 @@ import com.queapps.cruddozero.repository.SubscriberRepository
 
 class SubscriberListFragment : Fragment() {
 
-    private val viewModel: SubscriberListViewModel by viewModels {
-        object :ViewModelProvider.Factory{
+    private val viewModel : SubscriberListViewModel by viewModels {
+        object : ViewModelProvider.Factory {
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
                 val databaseDataSource:SubscriberRepository =
                     DatabaseDataSource(AppDatabase.getInstance(requireContext()).subscriberDao)
@@ -42,13 +42,13 @@ class SubscriberListFragment : Fragment() {
         get() = _binding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+        inflater : LayoutInflater, container: ViewGroup?,
+        savedInstanceState : Bundle?
+    ) : View {
         return _binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         observeViewModelEvents()
@@ -58,7 +58,7 @@ class SubscriberListFragment : Fragment() {
 
     private fun observeViewModelEvents() {
         viewModel.allSubscribersEvent.observe(viewLifecycleOwner){ allSubscribers ->
-            val subscriberListAdapter:SubscriberListAdapter= SubscriberListAdapter(
+            val subscriberListAdapter : SubscriberListAdapter= SubscriberListAdapter(
                 allSubscribers
             ).apply {
                 onItemClick = { subscriber->
@@ -80,8 +80,8 @@ class SubscriberListFragment : Fragment() {
 
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onStart() {
+        super.onStart()
         viewModel.getSubscribers()
     }
 
@@ -89,9 +89,8 @@ class SubscriberListFragment : Fragment() {
         _binding.fabAddSubscriber.setOnClickListener {
 //            O certo é chamar pelo id da navegação
 //            findNavController().navigate(R.id.action_subscriberListFragment_to_subscriberFragment)
-            findNavController().navigateWithAnimations(R.id.action_subscriberListFragment_to_subscriberFragment)
+            findNavController()
+                .navigateWithAnimations(R.id.action_subscriberListFragment_to_subscriberFragment)
         }
     }
-
-
 }
